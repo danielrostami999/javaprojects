@@ -3,13 +3,13 @@ public class Complex {
     private double Imag;
 
     public Complex() {
-        this.Real = 0;
-        this.Imag = 0;
+        Real = 0;
+        Imag = 0;
     }
 
     public Complex(double x) {
-        Real = 0;
-        Imag = 0;
+        Real = x;
+        
     }
 
     public Complex(double x, double y) {
@@ -22,7 +22,7 @@ public class Complex {
     }
 
     public void setReal(double x) {
-        this.Real = x;
+        Real = x;
     }
 
     public double getImag() {
@@ -30,23 +30,22 @@ public class Complex {
     }
 
     public void setImag(double y) {
-        this.Imag = y;
-    }//htyhe
+        Imag = y;
+    }
     @Override
     public String toString() {
-        String str = "" ;
-        if(Real != 0){ 
-            str = String.format("%f", Real);
-        }else str = str + String.format("%fi", Imag);
-
-        if(Imag != 0){ 
-            if(Imag < 0){
-                
-                str = String.format("%fi", Imag);
-            }else str = String.format("%fi", Imag);
-        }else str = String.format("%f", Imag);
-    return str;
-        
-        
+        String str ;
+        double x = Real;
+        double y = Imag;
+        if(x != 0){ 
+            str = String.format("%.0f", x);
+                if (y  > 0 ){
+                    str += String.format("+%.0fi", y);
+                } else if(y < 0)
+                    str += String.format("%.0fi", y);
+        }else if(y != 0){ 
+            str = String.format("%.0fi", y);
+        }else str = String.format("%.0f", x);
+    return str;     
     }
 }
