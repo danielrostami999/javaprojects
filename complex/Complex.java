@@ -8,8 +8,8 @@ public class Complex {
     }
 
     public Complex(double x) {
-        this.Real = 0;
-        this.Imag = 0;
+        Real = 0;
+        Imag = 0;
     }
 
     public Complex(double x, double y) {
@@ -31,8 +31,7 @@ public class Complex {
 
     public void setImag(double y) {
         this.Imag = y;
-    }
-
+    }//htyhe
     @Override
     public String toString() {
         String str = "" ;
